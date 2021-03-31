@@ -1,19 +1,19 @@
-Implementar las siguientes funciones, especificando su signatura.
+-- Implementar las siguientes funciones, especificando su signatura.
 
-1 absoluto: calcula el valor absoluto de un n´umero entero.
-2 maximoabsoluto: devuelve el m´aximo entre el valor absoluto de dos n´umeros enteros.
-3 maximo3: devuelve el m´aximo entre tres n´umeros enteros.
-4 algunoEs0: dados dos n´umeros racionales, decide si alguno de los dos es igual a 0 (hacerlo
-dos veces, una sin usar y otra usando pattern matching).
-5 ambosSon0: dados dos n´umeros racionales, decide si ambos son iguales a 0 (hacerlo dos
-veces, una sin usar y otra usando pattern matching).
-6 esMultiploDe: dados dos n´umeros naturales, decidir si el primero es m´ultiplo del segundo.
-7 digitoUnidades: dado un n´umero natural, extrae su d´ıgito de las unidades.
-8 digitoDecenas: dado un n´umero natural, extrae su d´ıgito de las decenas.
+-- 1 absoluto: calcula el valor absoluto de un n´umero entero.
+-- 2 maximoabsoluto: devuelve el m´aximo entre el valor absoluto de dos n´umeros enteros.
+-- 3 maximo3: devuelve el m´aximo entre tres n´umeros enteros.
+-- 4 algunoEs0: dados dos n´umeros racionales, decide si alguno de los dos es igual a 0 (hacerlo
+-- dos veces, una sin usar y otra usando pattern matching).
+-- 5 ambosSon0: dados dos n´umeros racionales, decide si ambos son iguales a 0 (hacerlo dos
+-- veces, una sin usar y otra usando pattern matching).
+-- 6 esMultiploDe: dados dos n´umeros naturales, decidir si el primero es m´ultiplo del segundo.
+-- 7 digitoUnidades: dado un n´umero natural, extrae su d´ıgito de las unidades.
+-- 8 digitoDecenas: dado un n´umero natural, extrae su d´ıgito de las decenas.
 
-Observacion: Cuando el problema en cuesti´on trata sobre n´umeros naturales, se puede
-simplemente usar el tipo Int e ignorar el comportamiento del programa si el usuario
-decide ejecutarlo usando para los par´ametros enteros negativos o 0.
+-- Observacion: Cuando el problema en cuesti´on trata sobre n´umeros naturales, se puede
+-- simplemente usar el tipo Int e ignorar el comportamiento del programa si el usuario
+-- decide ejecutarlo usando para los par´ametros enteros negativos o 0.
 
 
 absoluto :: Int -> Int
@@ -57,7 +57,8 @@ digitoUnidades :: Int -> Int
 digitoUnidades x = mod x 10
 
 
-digitoDecenas :: Int -> Int 
-digitoDecenas x | x >= 2 = mod x 100
-                | otherwise = digitoUnidades x
+digitoDecenas :: Int -> Int
+digitoDecenas x | x < 0 = undefined
+                | x <= 9 = digitoUnidades x
+                | otherwise = div (mod x 100) 10
 
