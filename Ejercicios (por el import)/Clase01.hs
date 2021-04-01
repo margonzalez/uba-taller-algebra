@@ -16,49 +16,51 @@
 -- decide ejecutarlo usando para los par´ametros enteros negativos o 0.
 
 
-absoluto :: Int -> Int
-absoluto n  | n > 0 = n
-            | otherwise = -n
+module Clase01
+where
+    absoluto :: Int -> Int
+    absoluto n  | n > 0 = n
+                | otherwise = -n
 
-maximoabsoluto :: Int -> Int -> Int
-maximoabsoluto x y = max (absoluto x) (absoluto y)
-
-
-maximo3 :: Int -> Int -> Int -> Int
-maximo3 x y z = maximum [x, y, z]
-
-algunoEs0 :: Float -> Float -> Bool
-algunoEs0 _ 0 = True
-algunoEs0 0 _ = True
-algunoEs0 _ _ = False
+    maximoabsoluto :: Int -> Int -> Int
+    maximoabsoluto x y = max (absoluto x) (absoluto y)
 
 
-es0 :: Float -> Bool
-es0 n = n == 0
+    maximo3 :: Int -> Int -> Int -> Int
+    maximo3 x y z = maximum [x, y, z]
 
-algunoEs0v2 :: Float -> Float -> Bool 
-algunoEs0v2 x y = es0 x || es0 y
-
-
-ambosSon0 :: Float -> Float -> Bool 
-ambosSon0 0 0 = True
-ambosSon0 _ _ = False
+    algunoEs0 :: Float -> Float -> Bool
+    algunoEs0 _ 0 = True
+    algunoEs0 0 _ = True
+    algunoEs0 _ _ = False
 
 
-ambosSon0v2 :: Float -> Float -> Bool 
-ambosSon0v2 x y = es0 x && es0 y
+    es0 :: Float -> Bool
+    es0 n = n == 0
+
+    algunoEs0v2 :: Float -> Float -> Bool 
+    algunoEs0v2 x y = es0 x || es0 y
 
 
-esMultiploDe :: Int -> Int -> Bool 
-esMultiploDe x y = mod x y == 0
+    ambosSon0 :: Float -> Float -> Bool 
+    ambosSon0 0 0 = True
+    ambosSon0 _ _ = False
 
 
-digitoUnidades :: Int -> Int
-digitoUnidades x = mod x 10
+    ambosSon0v2 :: Float -> Float -> Bool 
+    ambosSon0v2 x y = es0 x && es0 y
 
 
-digitoDecenas :: Int -> Int
-digitoDecenas x | x < 0 = undefined
-                | x <= 9 = digitoUnidades x
-                | otherwise = div (mod x 100) 10
+    esMultiploDe :: Int -> Int -> Bool 
+    esMultiploDe x y = mod x y == 0
+
+
+    digitoUnidades :: Int -> Int
+    digitoUnidades x = mod x 10
+
+
+    digitoDecenas :: Int -> Int
+    digitoDecenas x | x < 0 = undefined
+                    | x <= 9 = digitoUnidades x
+                    | otherwise = div (mod x 100) 10
 
